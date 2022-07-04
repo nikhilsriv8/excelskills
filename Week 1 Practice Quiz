@@ -1,0 +1,91 @@
+#Practice Quiz - Week 1 - Excel Skills for Business - Intermediate II
+
+Step 1:
+  Data Validation for no duplicates - Custom
+  =COUNTIFS(Student_number,C8)<=1
+  
+Step 2, 3 and 4:
+ Drop Down List - Make a List on separate Sheet (Lists)
+ In Lists Sheet, first give a different header name than original sheet -> create named ranges -> convert to a table 
+    -- Now go to original Sheet, create data validations -> list -> select names from Lists sheet.
+    
+Step 6:
+  Decimal between 0 and 1
+  
+Step 7:
+  Birth Year NOT to have Students less than 16 YEARS OLD
+  Data Validation -> Whole Number -> Data : Less than or equal to
+      maximum: =YEAR(TODAY()) - 16            ##HIGHLIGHTS STUDENTS WHO ARE LESS THAN 16 YEARS OLD TODAY.
+      
+Step 8:
+  First Enrolment Date NOT to be MORE THAN TODAY, use CONDITIONAL FORMATTING to highlight FIRST YEAR STUDENTS
+    
+    Enrolment date to NOT be MORE THAN TODAY: 
+    Data Validation -> Date -> Less than or equal to -> =TODAY()
+    
+    CONDITIONAL FORMATTING to highlight FIRST YEAR STUDENTS:
+    
+    Home -> Conditional Formatting -> New Rule
+    Choose "use formula to determine which cells to format"
+      Formula: = ((YEAR(TODAY()) - YEAR(first data under first enrolment date column)) < 1 
+          #year as of writing is 2022, therefore, this formula will return students who have completed less than a year, implying they are in first year.
+          
+Step 9:
+  Validate between 0 and 5
+  
+Step 10:
+  Validate to have less than or equal to number of units enrolled.
+  Data Validation -> Whole Number -> less than or equal to -> N8
+  
+Step 11:
+  Validate to have less than 30 units.
+  
+Step 12:
+  Validate to have average between 0 and 100
+  
+Step 13:
+  Drop down list for grades.
+  Follow Step 2,3,4.
+  
+Step 14:
+  Drop down list for Campus
+  Copy and paste drop down list
+  
+Step 15:
+  Count number of students for selected Campus.
+  Use COUNTIFS
+  
+  =COUNTIFS(Campus,S9)
+  
+Step 16:
+  Drop down list for Course
+  Copy Paste
+  
+Step 17:
+  Count number of students for selected course
+  Follow like in step 15.
+  
+Step 18:
+  Copy Course dropdown
+  
+Step 19:
+  Copy Total grade dropdown
+  
+Step 20, 21:
+  Count number of accounting students with failed grade.
+  
+  =COUNTIFS(course, Accounting(step 18 cell number), Total grade, Fail(step19 cell num))
+  
+Step 22:
+  Copy Course dropdown
+  
+Step 23:
+  Copy Campus dropdown
+  
+Step 24, 25:
+  Calcualte total payment for courses and campus.
+  Use SUMIFS
+  
+  =SUMIFS(Total_Payments, Course, Step22, Campus, Step23)
+
+      
